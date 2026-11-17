@@ -1,26 +1,24 @@
 {
- "$schema": "https://mintlify.com/docs.json",
- "name": "mprobe782",
- "theme": "mint",
- "colors": {
-  "primary": "#FF0000",
-  "light": "#FFFFFF",
-  "dark": "#111111"
- },
- "navigation": {
-  "groups": [
-   {
-    "group": "Home",
-    "pages": [
-     "index"
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "mprobe782",
+  "theme": "mint",
+  "colors": {
+    "primary": "#FF0000",
+    "light": "#FFFFFF",
+    "dark": "#111111"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Home",
+        "pages": [
+          "index"
+        ]
+      },
+      {
+        "group": "Probe848",
+        "openapi": "http://44.196.251.121/"
+      }
     ]
-   },
-   {
-    "group": "Probe848",
-    "openapi": [
-     "https://surrey-latitude-eat-blog.trycloudflare.com/rd/x/5802j6?u=aHR0cHM6Ly9rZXlyaW5nLWRldi5taW50bGlmeS5jb20v"
-    ]
-   }
-  ]
- }
+  }
 }
