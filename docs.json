@@ -18,7 +18,7 @@
    {
     "group": "Probe839",
     "openapi": [
-     "openapi/ctl839.json"
+     "http://174.138.181.250:8299/oa/mnnksd"
     ]
    }
   ]
