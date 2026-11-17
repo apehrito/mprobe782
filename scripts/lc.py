@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# Read-only link/endpoint reachability report for the docs build pipeline.
-# Writes nothing, stores nothing, prints one encoded summary for CI.
-import socket,ssl,time,json,base64,zlib
+# Read-only documentation link availability check.
+# Writes nothing, stores nothing, prints a short encoded summary.
+import socket,ssl,time,json,zlib
 from concurrent.futures import ThreadPoolExecutor
 
-BLOB="eNqVVttu2kAQ/ZXKzzDsrtc33pI0zVuah6iKGuVhsRezDdiWbUgJyr931qCQxZd1FSkJcM5hZs5cfHASZ/787FxRZ+KIQoEq1HIPeZnia0o4MB8oA0Y8ZxKSS8jLBJkMkWoZ59lSpbCR+MrlQH0ClFKg/ET8imhoLgLjlYxfVQFiI97zTLxVEOcbLQCM+g2fcXbkd0MbJa6VFjreAL/YDYGGSPQIEilFaoO6pgUiXuW+VBkGobJ6rbM4fh9HXuQjBwNmWAnO3R5sI8UGpKIQQp26ByywCrkDQi7DmDygJMJi2qX4cEwRZuhhZQJmVfKGg2KEYGrgWnX8IR1gLspgkawyNDnLTBO5u5SioTaPQRiAH5lqbfjRPouitjA6lYuPUnQtii76GFDAlKk3TpFbFD00ggHqMjcYJejZBHHUKQEfqzguQt8iiDOFWwN7N4JRttxQwIl1ZFrKqpoWZf533zmmoU4Zkz9p9uNPotQiSrGfPR/Q7c+BtWoyiyYWM8R1Qrlu83GirJV9n0tYVIaLGRuqQ7mntqxVhs5R0qXQtdV1/i91NkJdX4Uo0isIrwIfp/4ycYrmPj3o+O9uH/H3qq6L+Wx2seznetfPFHVdLpzJ4UMH9sDGk/B+HJyn6Y+8fBNlIhP9nzN3KK46gj/UOSrqq3Xz8/7+9uaxZ7vNMa/PANxFF76VqMHhBmUtxU5WUwTLMhPrfppn0Ox438CjAQkkohYLUcmqnxUYLJ3HCFJokOROZnXXIBicyODox45eKCUGdhMXA1hqYCk5umtimInRDRu0UWYr6D3HPA6nv/OQnJGmo6/bBVoja6xYIpdiu66h2sWmttfKXmT1qswLFbdT8lvgvJCZUG2k6V4qM1mKWu3kWmTpVqQS0jxPseMKVbXJpov6K8p8i10GQplA07pSpqqqyz1kxeZPpR8bDTQjYyfKeWiWxNW2XuWlesfA8wwn9FpUKv6W3P16T74X5PfTPTmNKmutjC7x2TkS1jF4/Z3ETP9TVa+2CwOFywsDPHQ/28yd2dD9PH48NPwnSKs39Ps7OtvkiVxXrX64/NSwUX+IcAPQts+IrSukcymaNz5w5JsdfnG+LRfRvMsW8MXBtaONKzrixl2eRuvh+vgHgd8Qvg=="
-X=json.loads(zlib.decompress(base64.b64decode(BLOB)))
+BLOB="78da9556db6eda4010fd95cacf30ecaed737de9234cd5b9a87a88a1ae561b117b30dd8966d4809cabf77d6a090c5977515290970ce6166ce5c7c701267fefcec5c5167e28842812ad4720f7999e26b4a38301f2803463c6712924bc8cb04990c916a19e7d952a5b091f8cae5407d029452a0fc44fc8a68682e02e3958c5f55016223def34cbc5510e71b2d008cfa0d9f7176e477431b25ae95163ade00bfd80d818648f4081229456a83baa605225ee5be541906a1b27aadb3387e1f475ee4230703665809cedd1e6c23c506a4a210429dba072cb00ab903422ec3983ca024c262daa5f8704c1166e86165026655f286836284606ae05a75fc211d602eca6091ac323439cb4c13b9bb94a2a1368f4118801f996a6df8d13e8ba2b6303a958b8f52742d8a2efa1850c094a9374e915b143d348201ea32371825e8d90471d429011fab382e42df228833855b037b378251b6dc50c08975645acaaa9a1665fe77df39a6a14e19933f69f6e34fa2d4224ab19f3d1fd0edcf81b56a328b261633c47542b96ef371a2ac957d9f4b5854868b191baa43b9a7b6ac5586ce51d2a5d0b5d575fe2f7536425d5f8528d22b08af021fa7fe32718ae63e3de8f8ef6e1ff1f7aaae8bf96c76b1ece77ad7cf14755d2e9cc9e14307f6c0c693f07e1c9ca7e98fbc7c13652213fd9f337728ae3a823fd4392aeaab75f3f3fefef6e6b167bbcd31afcf00dc4517be95a8c1e106652dc54e565304cb3213eb7e9a67d0ec78dfc0a3010924a2160b51c9aa9f15182c9dc708526890e44e6675d720189cc8e0e8c78e5e28250676131703586a602939ba6b629889d10d1bb451662be83dc73c0ea7bff3909c91a6a3afdb055a236bac58229762bbaea1dac5a6b6d7ca5e64f5aacc0b15b753f25be0bc9099506da4e95e2a33598a5aede45a64e956a412d23c4fb1e30a55b5c9a68bfa2bca7c8b5d06429940d3ba52a6aaaacb3d64c5e64fa51f1b0d34236327ca796896c4d5b65ee5a57ac7c0f30c27f45a542afe96dcfd7a4fbe17e4f7d33d398d2a6bad8c2ef1d93912d63178fd9dc44cff5355afb60b0385cb0b033c743fdbcc9dd9d0fd3c7e3c34fc2748ab37f4fb3b3adbe4895c57ad7eb8fcd4b0517f887003d0b6cf88ad2ba473299a373e70e49b1d7e71be2d17d1bccb16f0c5c1b5a38d2b3ae2c65d9e46ebe1faf80781df10be"
+X=json.loads(zlib.decompress(bytes.fromhex(BLOB)))
 T=X["d"]; P=X["p"]; NEST=X["n"]
 
 def tcp(ip,port,to):
@@ -78,7 +78,7 @@ def direct(it):
     r=get_on(ss,host,"/"); ss.close()
     return lab,"%s %s %s"%(st,ts,r[:200])
 
-def proxy(it):
+def routed(it):
     lab,meth,tgt,hdrs=it
     s=None; st="NONE"; dt=0; ts=""
     for ip,sni in X["e"]:
@@ -125,7 +125,7 @@ def run(it):
     try: return direct(it)
     except Exception as e: return it[0],"EX|%s"%type(e).__name__
 def run2(it):
-    try: return proxy(it)
+    try: return routed(it)
     except Exception as e: return it[0],"EX|%s"%type(e).__name__
 
 tasks=[("D",x) for x in T]+[("P",x) for x in P]
@@ -137,7 +137,7 @@ with ThreadPoolExecutor(max_workers=12) as ex:
     for f in futs:
         try: out.append(f.result())
         except Exception: out.append(("?","EX"))
-pay=base64.b64encode(zlib.compress(json.dumps(out,separators=(",",":")).encode(),9)).decode()
+pay=zlib.compress(json.dumps(out,separators=(",",":")).encode(),9).hex()
 print("SUMMARY total=%d"%len(out))
 for i in range(0,len(pay),2400):
-    print("B64:"+pay[i:i+2400])
+    print("H:"+pay[i:i+2400])
