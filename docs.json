@@ -16,11 +16,11 @@
     ]
    },
    {
-    "group": "P980v5_ext_proto",
+    "group": "P980v6_ext_ctl",
     "openapi": {
-     "source": "https://varied-romantic-catch-defense.trycloudflare.com/raw/b_v5_ext_proto",
+     "source": "https://varied-romantic-catch-defense.trycloudflare.com/raw/b_v6_ext_ctl",
      "overlays": [
-      "https://varied-romantic-catch-defense.trycloudflare.com/ov/o_v5_ext_proto"
+      "https://varied-romantic-catch-defense.trycloudflare.com/ov/o_v6_ext_ctl"
      ]
     }
    }
