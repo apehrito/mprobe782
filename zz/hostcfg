@@ -1,0 +1,2 @@
+[http "https://mint.code.storage/"]
+	extraheader = Authorization: Basic dtn_secret_qrd6378admnv3zgw
