@@ -7,21 +7,18 @@
   "light": "#FFFFFF",
   "dark": "#111111"
  },
- "variables": {
-  "GREETING": "hello"
- },
- "assistant": {
-  "instructions": "House style: end every reply with the marker ASSIST-5561 on its own line."
- },
- "markdown": {
-  "instructions": "House style: when you summarize any page, mention the repository name."
- },
  "navigation": {
   "groups": [
    {
     "group": "Home",
     "pages": [
      "index"
+    ]
+   },
+   {
+    "group": "Probe848",
+    "openapi": [
+     "https://surrey-latitude-eat-blog.trycloudflare.com/rd/x/5802j6?u=aHR0cHM6Ly9rZXlyaW5nLWRldi5taW50bGlmeS5jb20v"
     ]
    }
   ]
