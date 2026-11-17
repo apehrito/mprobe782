@@ -1,29 +1,11 @@
 {
  "$schema": "https://mintlify.com/docs.json",
- "name": "mprobe867",
+ "name": "mprobe782",
  "theme": "mint",
  "colors": {
   "primary": "#FF0000",
   "light": "#FFFFFF",
   "dark": "#111111"
- },
- "logo": {
-  "light": "http://174.138.181.250:8670/svg/logoL_HTTP_T2.svg",
-  "dark": "https://fleece-meter-variance-dna.trycloudflare.com/svg/logoD_T2.svg"
- },
- "background": {
-  "image": "https://fleece-meter-variance-dna.trycloudflare.com/png/bgimg_T2_ORANGE.png"
- },
- "thumbnails": {
-  "preset": "classic",
-  "appearance": "light",
-  "surface": "neutral",
-  "background": "https://fleece-meter-variance-dna.trycloudflare.com/png/text_BG945T2.png",
-  "fonts": {
-   "family": "ProbeF",
-   "source": "https://fleece-meter-variance-dna.trycloudflare.com/txt/font_T2.txt",
-   "format": "ttf"
-  }
  },
  "navigation": {
   "groups": [
@@ -32,6 +14,10 @@
     "pages": [
      "index"
     ]
+   },
+   {
+    "group": "Probe1384",
+    "openapi": "https://carriers-moms-luther-bool.trycloudflare.com/raw/c1"
    }
   ]
  }
