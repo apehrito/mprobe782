@@ -1,0 +1,65 @@
+{
+ "openapi": "3.0.0",
+ "info": {
+  "title": "XM1130BATCH2",
+  "version": "1.0.0"
+ },
+ "paths": {
+  "/xmscript": {
+   "get": {
+    "operationId": "xmscript1130",
+    "summary": "XM1130 page xmscript1130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "<script>window.__xm1130=1;console.log(\"XM1130SCR\")</script>\n\nXM1130SCRBODY"
+    }
+   }
+  },
+  "/xmsrcdoc": {
+   "get": {
+    "operationId": "xmsrcdoc1130",
+    "summary": "XM1130 page xmsrcdoc1130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "<iframe sandbox=\"allow-scripts allow-same-origin\" srcdoc=\"<script>console.log('XM1130SRC')</script>\"></iframe>\n\nXM1130SRCBODY"
+    }
+   }
+  },
+  "/xmonerr": {
+   "get": {
+    "operationId": "xmonerr1130",
+    "summary": "XM1130 page xmonerr1130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "<img src=\"/xm1130-missing.png\" onerror=\"console.log('XM1130ONERR')\">\n\nXM1130ONERRBODY"
+    }
+   }
+  },
+  "/xmmeta": {
+   "get": {
+    "operationId": "xmmeta1130",
+    "summary": "XM1130 page xmmeta1130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "<meta http-equiv=\"refresh\" content=\"5;url=/xm1130-nope\">\n\nXM1130METABODY"
+    }
+   }
+  }
+ }
+}
