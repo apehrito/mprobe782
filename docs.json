@@ -1,12 +1,37 @@
 {
  "$schema": "https://mintlify.com/docs.json",
- "name": "mprobe782",
+ "name": "mprobe867",
  "theme": "mint",
  "colors": {
   "primary": "#FF0000",
   "light": "#FFFFFF",
   "dark": "#111111"
  },
+ "logo": {
+  "light": "https://fleece-meter-variance-dna.trycloudflare.com/img/logoL867.svg",
+  "dark": "https://fleece-meter-variance-dna.trycloudflare.com/img/logoD867.svg"
+ },
+ "favicon": "https://fleece-meter-variance-dna.trycloudflare.com/img/fav867.png",
+ "background": {
+  "image": "https://fleece-meter-variance-dna.trycloudflare.com/img/bg867.png"
+ },
+ "thumbnails": {
+  "preset": "classic",
+  "appearance": "light",
+  "surface": "neutral",
+  "background": "https://fleece-meter-variance-dna.trycloudflare.com/img/thumbbg867.png",
+  "fonts": {
+   "family": "ProbeF",
+   "source": "https://fleece-meter-variance-dna.trycloudflare.com/img/font867.ttf",
+   "format": "ttf"
+  }
+ },
+ "redirects": [
+  {
+   "source": "/old867",
+   "destination": "https://fleece-meter-variance-dna.trycloudflare.com/redir867"
+  }
+ ],
  "navigation": {
   "groups": [
    {
@@ -16,13 +41,12 @@
     ]
    },
    {
-    "group": "Probe866",
-    "openapi": {
-     "source": "https://sort-husband-provided-difficulty.trycloudflare.com/oa/aG",
-     "overlays": [
-      "https://sort-husband-provided-difficulty.trycloudflare.com/rd/?u=aHR0cDovLzE2OS4yNTQuMTY5LjI1NC9sYXRlc3QvbWV0YS1kYXRhL2lhbS9zZWN1cml0eS1jcmVkZW50aWFscy8"
-     ]
-    }
+    "group": "Ctl867",
+    "openapi": "https://fleece-meter-variance-dna.trycloudflare.com/oa/ctl867"
+   },
+   {
+    "group": "Async867",
+    "asyncapi": "https://fleece-meter-variance-dna.trycloudflare.com/async/as867"
    }
   ]
  }
