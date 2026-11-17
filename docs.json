@@ -18,9 +18,9 @@
    {
     "group": "Probe866",
     "openapi": {
-     "source": "https://sort-husband-provided-difficulty.trycloudflare.com/oa/a3",
+     "source": "https://sort-husband-provided-difficulty.trycloudflare.com/oa/a4",
      "overlays": [
-      "http://174.138.181.250:8296/ov/c3"
+      "https://sort-husband-provided-difficulty.trycloudflare.com/f403/d4"
      ]
     }
    }
