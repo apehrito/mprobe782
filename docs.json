@@ -1,18 +1,1 @@
-{
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "Probe782",
-  "theme": "mint",
-  "colors": {
-    "primary": "#000000"
-  },
-  "navigation": {
-    "groups": [
-      {
-        "group": "Home",
-        "pages": [
-          "index"
-        ]
-      }
-    ]
-  }
-}
+{"MK797BADJSON": "/etc/passwd" BROKEN , "x": 
