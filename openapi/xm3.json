@@ -1,0 +1,23 @@
+{
+ "openapi": "3.0.0",
+ "info": {
+  "title": "XM1130BATCH3",
+  "version": "1.0.0"
+ },
+ "paths": {
+  "/xmexpr": {
+   "get": {
+    "operationId": "xmexpr1130",
+    "summary": "XM1130 page xmexpr1130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "EXPRSTART {1+1} MIDX {\"xm1130\".toUpperCase()} MIDY {process.env.XM1130} MIDZ {process.env.HOME} MIDW {globalThis.process.env.PATH} END"
+    }
+   }
+  }
+ }
+}
