@@ -1,18 +1,24 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "Probe782",
-  "theme": "mint",
-  "colors": {
-    "primary": "#000000"
-  },
-  "navigation": {
-    "groups": [
-      {
-        "group": "Home",
-        "pages": [
-          "index"
-        ]
-      }
+ "$schema": "https://mintlify.com/docs.json",
+ "name": "Probe797logo",
+ "theme": "mint",
+ "colors": {
+  "primary": "#000000"
+ },
+ "logo": {
+  "light": "/assets/logo797.svg",
+  "dark": "assets/logo797.svg"
+ },
+ "favicon": "/assets/logo797.svg",
+ "navigation": {
+  "groups": [
+   {
+    "group": "Home",
+    "pages": [
+     "index",
+     "imgpage"
     ]
-  }
+   }
+  ]
+ }
 }
