@@ -1,0 +1,18 @@
+{
+ "$schema": "https://mintlify.com/docs.json",
+ "name": "Probe797cd",
+ "theme": "mint",
+ "colors": {
+  "primary": "#000"
+ },
+ "navigation": {
+  "groups": [
+   {
+    "group": "Home",
+    "pages": [
+     "index"
+    ]
+   }
+  ]
+ }
+}
