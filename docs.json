@@ -8,7 +8,8 @@
   "dark": "#111111"
  },
  "logo": {
-  "light": "https://fleece-meter-variance-dna.trycloudflare.com/imgjson/logoJ867"
+  "light": "https://fleece-meter-variance-dna.trycloudflare.com/imgjson/logoJ867L",
+  "dark": "https://fleece-meter-variance-dna.trycloudflare.com/text/logoJ867D"
  },
  "favicon": "https://fleece-meter-variance-dna.trycloudflare.com/text/favT867",
  "background": {
