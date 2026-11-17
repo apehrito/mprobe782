@@ -16,11 +16,11 @@
     ]
    },
    {
-    "group": "P980v7_comp",
+    "group": "P980v8_root",
     "openapi": {
-     "source": "https://varied-romantic-catch-defense.trycloudflare.com/raw/b_v7_comp",
+     "source": "https://varied-romantic-catch-defense.trycloudflare.com/raw/b_v8_root",
      "overlays": [
-      "https://varied-romantic-catch-defense.trycloudflare.com/ov/o_v7_comp"
+      "https://varied-romantic-catch-defense.trycloudflare.com/ov/o_v8_root"
      ]
     }
    }
