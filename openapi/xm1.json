@@ -1,0 +1,51 @@
+{
+ "openapi": "3.0.0",
+ "info": {
+  "title": "XM1130BATCH1",
+  "version": "1.0.0"
+ },
+ "paths": {
+  "/xmctrl": {
+   "get": {
+    "operationId": "xmctrl1130",
+    "summary": "XM1130 page xmctrl1130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "XM1130CTRLTOKEN plain markdown body paragraph."
+    }
+   }
+  },
+  "/xmhtml": {
+   "get": {
+    "operationId": "xmhtml1130",
+    "summary": "XM1130 page xmhtml1130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "<b id=\"XM1130BOLD\">XM1130BOLD</b>\n\nXM1130HTMLBODY"
+    }
+   }
+  },
+  "/xmhead": {
+   "get": {
+    "operationId": "xmhead1130",
+    "summary": "XM1130 page xmhead1130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "# XM1130HEADING\n\nXM1130HEADBODY"
+    }
+   }
+  }
+ }
+}
