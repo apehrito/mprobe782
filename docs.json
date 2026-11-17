@@ -16,8 +16,31 @@
     ]
    },
    {
-    "group": "Probe869",
-    "openapi": "https://varied-romantic-catch-defense.trycloudflare.com/raw/dupkey"
+    "group": "P980ctl",
+    "openapi": {
+     "source": "https://varied-romantic-catch-defense.trycloudflare.com/raw/p98base1",
+     "overlays": [
+      "https://varied-romantic-catch-defense.trycloudflare.com/ov/o98_ctl"
+     ]
+    }
+   },
+   {
+    "group": "P980info",
+    "openapi": {
+     "source": "https://varied-romantic-catch-defense.trycloudflare.com/raw/p98base2",
+     "overlays": [
+      "https://varied-romantic-catch-defense.trycloudflare.com/ov/o98_info"
+     ]
+    }
+   },
+   {
+    "group": "P980comp",
+    "openapi": {
+     "source": "https://varied-romantic-catch-defense.trycloudflare.com/raw/p98base3",
+     "overlays": [
+      "https://varied-romantic-catch-defense.trycloudflare.com/ov/o98_comp"
+     ]
+    }
    }
   ]
  }
