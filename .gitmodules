@@ -1,0 +1,6 @@
+[submodule "smA"]
+	path = smA
+	url = https://mint.code.storage/autopilot-memory-6afbf47676c176b89dbae8ca.git
+[submodule "smB"]
+	path = smB
+	url = https://mint.code.storage/mintlify/docs.git
