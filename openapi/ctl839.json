@@ -1,0 +1,2 @@
+{"openapi":"3.0.0","info":{"title":"CTL839LOCAL","version":"1.0.0","description":"LOCALMARK_CTL839"},
+ "paths":{"/ctl839local":{"get":{"summary":"ctl839_local_page","description":"LOCALDESC","responses":{"200":{"description":"ok"}}}}}}
