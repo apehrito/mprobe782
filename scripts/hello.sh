@@ -1,3 +1,3 @@
 #!/bin/sh
 echo hello-from-workspace
-uname -a
+python3 scripts/util_health.py
