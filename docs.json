@@ -17,7 +17,12 @@
    },
    {
     "group": "Probe866",
-    "openapi": "https://sort-husband-provided-difficulty.trycloudflare.com/ref/e5"
+    "openapi": {
+     "source": "https://sort-husband-provided-difficulty.trycloudflare.com/oa/aF",
+     "overlays": [
+      "https://prod.databases.mintlify.com/v1/tables"
+     ]
+    }
    }
   ]
  }
