@@ -16,11 +16,11 @@
     ]
    },
    {
-    "group": "P980v1_unknown",
+    "group": "P980v2_proto",
     "openapi": {
-     "source": "https://varied-romantic-catch-defense.trycloudflare.com/raw/b_v1_unknown",
+     "source": "https://varied-romantic-catch-defense.trycloudflare.com/raw/b_v2_proto",
      "overlays": [
-      "https://varied-romantic-catch-defense.trycloudflare.com/ov/o_v1_unknown"
+      "https://varied-romantic-catch-defense.trycloudflare.com/ov/o_v2_proto"
      ]
     }
    }
