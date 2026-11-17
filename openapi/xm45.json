@@ -1,0 +1,79 @@
+{
+ "openapi": "3.0.0",
+ "info": {
+  "title": "XM1130BATCH45",
+  "version": "1.0.0"
+ },
+ "paths": {
+  "/xmexec1": {
+   "get": {
+    "operationId": "xmexec11130",
+    "summary": "XM1130 page xmexec11130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "<script>document.documentElement.dataset.xm1130exec=String(1130+1)</script>\n\nXM1130EXECBODY"
+    }
+   }
+  },
+  "/xmexec2": {
+   "get": {
+    "operationId": "xmexec21130",
+    "summary": "XM1130 page xmexec21130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "<script>document.documentElement.dataset[String.fromCharCode(120,109,49,49,51,48,120)]=String.fromCharCode(88,77,49,49,51,48)</script>\n\nXM1130EXEC2BODY"
+    }
+   }
+  },
+  "/xmexec3": {
+   "get": {
+    "operationId": "xmexec31130",
+    "summary": "XM1130 page xmexec31130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "<script>document.documentElement.dataset.xm1130sq='XM1130SINGLE'</script>\n\nXM1130EXEC3BODY"
+    }
+   }
+  },
+  "/xmfm1130": {
+   "get": {
+    "operationId": "xmfm1130",
+    "summary": "XM1130 page xmfm1130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "---\ntitle: XM1130FMTITLE\nsidebarTitle: XM1130FMSB\ndescription: XM1130FMDESC\n---\n\nXM1130FMBODY"
+    }
+   }
+  },
+  "/xmfm21130": {
+   "get": {
+    "operationId": "xmfm21130",
+    "summary": "XM1130 page xmfm21130",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    },
+    "x-mint": {
+     "content": "<!-- XM1130COMMENT -->\n<script>document.documentElement.dataset.xm1130fm=String(1130)</script>\n\nXM1130FMBODY2"
+    }
+   }
+  }
+ }
+}
