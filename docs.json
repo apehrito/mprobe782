@@ -10,9 +10,12 @@
    {
     "group": "Home",
     "pages": [
-     "index",
-     "../../../../etc/passwd"
+     "index"
     ]
+   },
+   {
+    "group": "API",
+    "openapi": "/etc/passwd"
    }
   ]
  }
