@@ -16,8 +16,8 @@
     ]
    },
    {
-    "group": "XM1130",
-    "openapi": "openapi/xm6.json"
+    "group": "XM1130R",
+    "openapi": "https://electro-schools-ide-spring.trycloudflare.com/spec.json"
    }
   ]
  }
