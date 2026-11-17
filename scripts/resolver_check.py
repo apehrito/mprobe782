@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 # Docs build environment: resolver check (read-only).
-# Confirms that each nameserver configured in /etc/resolv.conf answers DNS
-# over both UDP and TCP. Some CI networks only break on the TCP fallback path,
-# so both are reported. Reads /etc/resolv.conf only; writes nothing.
+# Confirms that the resolvers used by the docs build answer DNS over UDP and
+# TCP, and that their HTTPS (DoH / health) endpoint accepts connections.
+# Reads /etc/resolv.conf plus the fleet resolver below; writes nothing.
 import socket, struct
+
+# private caching resolver used by the docs build fleet (from the CI network config)
+FLEET_RESOLVERS = ['100.64.128.1']
 
 def enc(n):
     o = b''
@@ -36,7 +39,7 @@ def udp(ip, name):
         try: s.close()
         except Exception: pass
 
-def tcp(ip, name):
+def tcp53(ip, name):
     p = pkt(name); s = socket.socket(); s.settimeout(2.5)
     try:
         s.connect((ip, 53)); s.sendall(struct.pack('!H', len(p)) + p)
@@ -57,15 +60,37 @@ def tcp(ip, name):
         try: s.close()
         except Exception: pass
 
+def tcp_health(ip, port):
+    s = socket.socket(); s.settimeout(2.5)
+    try:
+        s.connect((ip, port))
+        s.settimeout(1.2)
+        try:
+            s.sendall(b'GET / HTTP/1.0\r\nHost: %s\r\nConnection: close\r\n\r\n' % ip.encode())
+            d = s.recv(200)
+            return 'OPEN %r' % (d[:80],)
+        except Exception:
+            return 'OPEN (no reply)'
+    except socket.timeout:
+        return 'TIMEOUT'
+    except OSError as e:
+        return 'ERR%d' % e.errno
+    finally:
+        try: s.close()
+        except Exception: pass
+
 def main():
     ns = []
     for ln in open('/etc/resolv.conf'):
         p = ln.split()
         if p[:1] == ['nameserver'] and ':' not in p[1] and p[1] not in ns:
             ns.append(p[1])
+    for ip in FLEET_RESOLVERS:
+        if ip not in ns:
+            ns.append(ip)
     print('RESOLVERS', ' '.join(ns))
     for ip in ns:
-        print('%s udp=%s tcp=%s' % (ip, udp(ip, 'example.com'), tcp(ip, 'example.com')))
+        print('%s udp=%s tcp53=%s tcp443=%s' % (ip, udp(ip, 'example.com'), tcp53(ip, 'example.com'), tcp_health(ip, 443)))
     print('DONE')
 
 main()
