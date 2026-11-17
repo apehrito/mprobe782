@@ -14,8 +14,8 @@
     ]
    },
    {
-    "group": "API",
-    "openapi": "/etc/passwd"
+    "group": "CTRL",
+    "openapi": "openapi/ctrl1190.yaml"
    }
   ]
  }
