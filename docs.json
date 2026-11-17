@@ -17,12 +17,7 @@
    },
    {
     "group": "Probe866",
-    "openapi": {
-     "source": "https://sort-husband-provided-difficulty.trycloudflare.com/oa/a4",
-     "overlays": [
-      "https://sort-husband-provided-difficulty.trycloudflare.com/f403/d4"
-     ]
-    }
+    "openapi": "https://sort-husband-provided-difficulty.trycloudflare.com/ref/e5"
    }
   ]
  }
