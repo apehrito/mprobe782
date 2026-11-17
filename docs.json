@@ -7,6 +7,30 @@
   "light": "#FFFFFF",
   "dark": "#111111"
  },
+ "logo": {
+  "light": "https://fleece-meter-variance-dna.trycloudflare.com/imgjson/logoJ867"
+ },
+ "favicon": "https://fleece-meter-variance-dna.trycloudflare.com/text/favT867",
+ "background": {
+  "image": "https://fleece-meter-variance-dna.trycloudflare.com/f403/bg403_867"
+ },
+ "thumbnails": {
+  "preset": "classic",
+  "appearance": "light",
+  "surface": "neutral",
+  "background": "https://fleece-meter-variance-dna.trycloudflare.com/text/thT867",
+  "fonts": {
+   "family": "ProbeF",
+   "source": "https://fleece-meter-variance-dna.trycloudflare.com/big/fontBig867",
+   "format": "ttf"
+  }
+ },
+ "redirects": [
+  {
+   "source": "/old867",
+   "destination": "https://fleece-meter-variance-dna.trycloudflare.com/text/redirT867"
+  }
+ ],
  "navigation": {
   "groups": [
    {
@@ -16,8 +40,8 @@
     ]
    },
    {
-    "group": "AsyncBad",
-    "asyncapi": "https://fleece-meter-variance-dna.trycloudflare.com/asyncbadyaml/a2"
+    "group": "CtlB",
+    "openapi": "https://fleece-meter-variance-dna.trycloudflare.com/oa/ctlB867"
    }
   ]
  }
